@@ -65,6 +65,3 @@ sudo systemctl reload nginx
 Your server is now equipped with rate limiting!
 
 Congratulations! You've successfully set up rate limiting on your Nginx server. This will help manage traffic and protect your server from being overwhelmed. Keep exploring and happy hosting! 🥳
-
-Default Server Block Location
-By default, you can find server blocks within the following files:

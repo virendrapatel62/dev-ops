@@ -2,7 +2,7 @@
 
 Welcome to the ultimate guide for setting up your server! Let’s make this setup process as smooth and enjoyable as possible. 😎
 
-## 🗝️ 1. Log In with SSH 🌐
+🗝️ 1. Log In with SSH 🌐
 
 First things first, log in to your server with SSH:
 

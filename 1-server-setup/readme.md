@@ -101,4 +101,24 @@ Install and set up UFW to manage your firewall:
 sudo apt install ufw
 ```
 
+Allow traffic on ports 80 (HTTP), 443 (HTTPS), and 22 (SSH):
+
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 22/tcp
+```
+
+Enable UFW:
+
+```bash
+sudo ufw enable
+```
+
+Check the status to ensure the rules are applied:
+
+```bash
+sudo ufw status
+```
+
 For detailed instructions on enabling and disabling ports, check out the UFW documentation.

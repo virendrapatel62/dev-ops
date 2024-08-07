@@ -1,4 +1,4 @@
-🎉 Fun and Interesting Nginx Rate Limiting Guide 🎉
+🎉 Nginx Rate Limiting 🎉
 
 ```bash
 sudo nano /etc/nginx/nginx.conf

@@ -1,99 +1,104 @@
-# Server Setup
+# 🎉 Server Setup Party 🚀
 
-Login using ssh
+Welcome to the ultimate guide for setting up your server! Let’s make this setup process as smooth and enjoyable as possible. 😎
 
-```
+## 🗝️ 1. Log In with SSH 🌐
+
+First things first, log in to your server with SSH:
+
+```bash
 ssh root@172.105.60.205
 ```
 
-Always run the apt update command before apt upgrade to ensure that you have the latest packages available.
+🍎 2. Keep Your Packages Fresh
+Before upgrading, always update your package list to get the latest and greatest:
 
-```
+```bash
 apt update
 apt upgrade
 ```
 
-Change password (optional)
+🔑 3. Change the Root Password (Optional)
+Want to keep things extra secure? Change the root password:
 
-```
+```bash
 passwd
 ```
 
-Add non-root user and add it to sudoers
+👤 4. Create a Non-Root User & Give Sudo Access
+Add a new user and grant them sudo privileges:
 
-```
-usp
-groups <username>
+```bash
+adduser <username>
 usermod -aG sudo <username>
 ```
 
-Change password for the user
+🔒 5. Set a Password for Your New User
+Update the password for your new user:
 
-```
-sudo passwd username
+```bash
+sudo passwd <username>
 ```
 
-Connect shell with the new user
+💻 6. Connect with Your New User
+Log in with your new user credentials:
 
-```
+```bash
 ssh <username>@192.IP.IP.IP
 ```
 
-Connect to the server using SSH
+🔑✨ 7. Set Up SSH Key Authentication
+Generate a shiny new SSH key pair on your local machine:
 
-Generate ssh key from your local machine
-
-```
+```bash
 ssh-keygen -t ed25519 -C "user@gmail.com"
 ```
 
-to view the public key
+View your brand-new public key:
 
-```
+```bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
-Once you have generated the SSH keys, you can add them to your server using the following command
+🌍 8. Add Your Public Key to the Server
+On your server, create a .ssh directory (if it doesn’t exist) and add your public key to authorized_keys:
 
-On your server, run the following command to copy the public key to the server. Create a new directory called .ssh in your home directory if it doesn’t already exist. Then create a new file called authorized_keys in the .ssh directory and paste the public key into the file.
-
-```
+```bash
+mkdir -p ~/.ssh
 nano ~/.ssh/authorized_keys
 ```
 
-if folder does not exist create folder then create file
+Paste your public key into the authorized_keys file and save it.
 
-```
-cd ~
-mkdir .ssh
-nano authorized_keys
-```
+🔐 9. Add Key to SSH Agent
+On your local machine, add your SSH key to the agent:
 
-add it to the ssh utility (run on your local machine)
-
-```
+```bash
 ssh-add -k ~/.ssh/id_ed25519
 ```
 
-Great, Now you can login without password. 🎉
+Now you can log in without needing a password. 🎉
 
-Disable password login your server
+🚫🔐 10. Disable Password Login for Extra Security
+Edit the SSH configuration to disable password login:
 
-```
+```bash
 sudo nano /etc/ssh/sshd_config
-
 ```
 
-Open this file in nano editor and search for PasswordAuthentication and change it to no. Optionally, you can also change the PermitRootLogin to no to prevent root user from logging in.
+Find PasswordAuthentication and set it to no. Optionally, you can also set PermitRootLogin to no to prevent root logins.
 
-```
+Restart SSH to apply your changes:
+
+```bash
 sudo service ssh restart
 ```
 
-Firewall configuration
+🔥 11. Configure the Firewall
+Install and set up UFW to manage your firewall:
 
-```
+```bash
 sudo apt install ufw
 ```
 
-[Follow the documentation of ufw to enable and disable ports](https://help.ubuntu.com/community/UFW)
+For detailed instructions on enabling and disabling ports, check out the UFW documentation.

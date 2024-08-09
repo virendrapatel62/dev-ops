@@ -22,4 +22,7 @@ Welcome to the DevOps Guide! Below are the links to the README files for various
 - 🔒 **[Setup SSL (HTTPS)](./6-setup-ssl/readme.md)**  
   Secure your server with SSL/TLS to enable HTTPS. This section will guide you through setting up SSL certificates and ensuring secure connections.
 
+- 🔒 **[CI-CD Setup for Self Hosted Server](./7-CI-CD-self-hosted/readme.md)**  
+  This guide will walk you through setting up a CI/CD pipeline using GitHub Actions to automatically deploy your Next.js project to a self-hosted server.
+
 Happy configuring!

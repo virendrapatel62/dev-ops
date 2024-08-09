@@ -31,7 +31,14 @@ npm install -g pm2
 🚴‍♂️ Run the App with pm2:
 
 ```bash
-npm run start
+pm2 start "npm run start" --name APP_NAME
+```
+
+APP_NAME can be used to restart app or stop the app
+
+```bash
+pm2 stop APP_NAME
+pm2 restart APP_NAME
 ```
 
 the cloned project here is already setup. start command will run the project with pm2

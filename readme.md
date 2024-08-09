@@ -31,3 +31,5 @@ Secure your server with SSL/TLS to enable HTTPS. This section will guide you thr
 This guide will walk you through setting up a CI/CD pipeline using GitHub Actions to automatically deploy your Next.js project to a self-hosted server.
 
 Happy configuring!
+
+[Open Docs](http://devops-docs.feelfreetocode.com/)
